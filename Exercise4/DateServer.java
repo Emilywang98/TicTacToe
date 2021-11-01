@@ -1,4 +1,4 @@
-package inlab2;
+package Exercise4;
 
 import java.io.BufferedReader;
 import java.io.IOException;
