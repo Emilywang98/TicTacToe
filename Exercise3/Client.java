@@ -1,9 +1,14 @@
+package Exercise3;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
+/**
+ * client side which communicates with the user
+ */
 public class Client {
 	private PrintWriter socketOut;
 	private Socket palinSocket;
@@ -23,23 +28,31 @@ public class Client {
 	}
 
 	public void communicate()  {
-
 		String line = "";
 		String response = "";
 		boolean running = true;
 		while (running) {
 			try {
 				System.out.println("please enter a word: ");
+
+				//waits here until user enters answer
 				line = stdIn.readLine();
 				if (!line.equals("QUIT")){
+					//prints response on client
 					System.out.println(line);
+
+					//sends back to the server
 					socketOut.println(line);
+
+					//reads response from server
 					response = socketIn.readLine();
-					System.out.println(response);	
+
+					//prints response on client
+					System.out.println(response);
 				}else{
 					running = false;
 				}
-				
+
 			} catch (IOException e) {
 				System.out.println("Sending error: " + e.getMessage());
 			}
