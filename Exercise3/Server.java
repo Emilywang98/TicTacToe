@@ -37,10 +37,7 @@ public class Server {
                 char ch;
 
                 int j = line.length();
-//                for(int i = 0 ; i < line.length(); i++){
-//                    ch = line.charAt(i);
-//                    linePal.at(j) += ch;
-//                }
+
                 for(int i = line.length() - 1 ; i >= 0; i--){
                     ch = line.charAt(i);
                     linePal+=ch;
